@@ -24,3 +24,5 @@ _testmain.go
 *.prof
 static/css/kendo-ui/
 static/js/kendo-ui/
+.idea/workspace.xml
+.idea/libraries/GOPATH__kendo_ui_samples_.xml
