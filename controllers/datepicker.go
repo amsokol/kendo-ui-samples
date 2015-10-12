@@ -11,4 +11,5 @@ type DatepickerController struct {
 func (c *DatepickerController) Get() {
 	c.Data["Email"] = "astaxie@gmail.com"
 	c.TplNames = "datepicker.html"
+	c.Render()
 }
