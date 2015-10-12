@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Welcome to Kendo UI AutoComplete demo page!</title>
+  <link href="/static/css/kendo-ui/kendo.common.min.css" rel="stylesheet"/>
+  <link href="/static/css/kendo-ui/kendo.office365.min.css" rel="stylesheet"/>
+  <script src="/static/js/jquery.js"></script>
+  <script src="/static/js/kendo-ui/kendo.all.js"></script>
+</head>
+<body>
+<div id="example">
+  <div>
+    <h3>Welcome to Kendo UI AutoComplete demo page!</h3>
+  </div>
+  <div class="demo-section k-content">
+    <h4>Find a product</h4>
+    <input id="products" style="width: 100%;"/>
+
+    <div class="demo-hint">Hint: type "che"</div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $("#products").kendoAutoComplete({
+        dataTextField: "name",
+        filter: "contains",
+        minLength: 3,
+        dataSource: {
+          type: "json",
+          serverFiltering: true,
+          transport: {
+            read: {
+              url: "/autocomplete/products",
+              dataType: 'jsonp'
+            }
+          }
+        }
+      });
+    });
+  </script>
+</div>
+</body>
+</html>

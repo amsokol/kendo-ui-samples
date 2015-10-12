@@ -6,6 +6,10 @@ import (
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
+	beego.Router("/", &controllers.MainController{})
+
 	beego.Router("/datepicker", &controllers.DatepickerController{})
+
+	beego.Router("/autocomplete", &controllers.AutocompleteController{})
+	beego.Router("/autocomplete/products", &controllers.AutocompleteController{}, "get:GetProducts")
 }
