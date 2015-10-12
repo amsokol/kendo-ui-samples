@@ -30,6 +30,7 @@ func ParseParams(vs url.Values) RequestParams {
 				p[key] = p1
 			}
 			p = (p1).(RequestParams)
+
 			key = strings.TrimRight(keys[i], "]")
 		}
 		p[key] = value
